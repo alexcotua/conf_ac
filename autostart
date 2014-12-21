@@ -1,0 +1,10 @@
+nitrogen --restore &
+conky &
+tint2 &
+volti &
+xfce4-power-manager &
+ 
+/usr/bin/nm-applet --sm-disable & 
+xcompmgr &
+thunar --daemon &
+setxkbmap latam &
