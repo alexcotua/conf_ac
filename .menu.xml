@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<item label="Ejecutar">
+			<action name="Execute">
+				<execute>gmrun</execute>
+			</action>
+		</item>
+		<item label="thunar">
+			<action name="Execute">
+				<execute>thunar</execute>
+			</action>
+		</item>
+		<item label="matar app">
+			<action name="Execute">
+				<execute>xkill</execute>
+			</action>
+		</item>
+		<menu id="root-menu-791014" label="cf">
+			<item label="bluetooth-wizard">
+				<action name="Execute">
+					<execute>bluetooth-wizard</execute>
+				</action>
+			</item>
+			<item label="bluetooth-sendto">
+				<action name="Execute">
+					<execute>bluetooth-sendto</execute>
+				</action>
+			</item>
+		</menu>
+		<item label="Terminal emulator">
+			<action name="Execute">
+				<execute>x-terminal-emulator</execute>
+			</action>
+		</item>
+		<item label="nautilus">
+			<action name="Execute">
+				<execute>nautilus</execute>
+			</action>
+		</item>
+		<menu id="root-menu-751151" label="Juegos">
+			<item label="tf2">
+				<action name="Execute">
+					<execute>steam steam://rungameid/440</execute>
+				</action>
+			</item>
+			<item label="steam">
+				<action name="Execute">
+					<execute>steam</execute>
+				</action>
+			</item>
+			<item label="playonlinux">
+				<action name="Execute">
+					<execute>playonlinux</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-291145" label="Musica">
+			<item label="rhythmbox">
+				<action name="Execute">
+					<execute>rhythmbox</execute>
+				</action>
+			</item>
+			<item label="spotify">
+				<action name="Execute">
+					<execute>spotify</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-341138" label="Ingenieria">
+			<item label="freecad">
+				<action name="Execute">
+					<execute>freecad</execute>
+				</action>
+			</item>
+		</menu>
+		<item label="Intelnet menol">
+			<action name="Execute">
+				<execute>x-www-browser</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="/Debian"/>
+		<menu id="client-list-menu"/>
+		<!-- This requires the presence of the 'menu' package to work -->
+		<separator/>
+		<item label="ObConf">
+			<action name="Execute">
+				<execute>obconf</execute>
+			</action>
+		</item>
+		<item label="Reconfigure">
+			<action name="Reconfigure"/>
+		</item>
+		<item label="Restart">
+			<action name="Restart"/>
+		</item>
+		<item label="obmenu">
+			<action name="Execute">
+				<execute>obmenu</execute>
+			</action>
+		</item>
+		<menu id="root-menu-231016" label="configuracion">
+			<item label="volti">
+				<action name="Execute">
+					<execute>volti</execute>
+				</action>
+			</item>
+			<item label="conky">
+				<action name="Execute">
+					<execute>conky</execute>
+				</action>
+			</item>
+			<item label="tint2">
+				<action name="Execute">
+					<execute>tint2</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-39619" label="conf_pantalla">
+			<item label="xbacklight -set 1">
+				<action name="Execute">
+					<execute>xbacklight -set 1</execute>
+				</action>
+			</item>
+			<item label="xbacklight -set 5">
+				<action name="Execute">
+					<execute>xbacklight -set 5</execute>
+				</action>
+			</item>
+			<item label="xbacklight -set 100">
+				<action name="Execute">
+					<execute>xbacklight -set 100</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<item label="Exit">
+			<action name="Exit"/>
+		</item>
+	</menu>
+</openbox_menu>
