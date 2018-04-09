@@ -155,3 +155,6 @@ function encontrar2(x,a)
          end
          
 end
+
+
+···· ver secante
