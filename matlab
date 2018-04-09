@@ -78,3 +78,35 @@ end
 x=a:0,01:b;
 y=s(x)
 plot(x,y)
+
+
+%encontrar el mayor valor en una matriz 
+minimo=zeros(1,n);
+maximo=zeros(1,n);
+ 
+for i=1:n
+    aux=P(i,:)
+    minimo(i)=min(aux);
+    maximo(i)=max(aux);
+end
+ 
+minimo=min(minimo)
+maximo=max(maximo)
+
+%otra forma
+Máximo de una matriz [Mínimo, Fila, Columna]: 
+
+function [NM,F,C]=MatrixMax(M) 
+[tf,tc]=size(M); 
+NM=M(1,1); 
+F=1; 
+C=1; 
+for i=1:tf 
+for j=1:tc 
+if M(i,j)>NM 
+NM=M(i,j); 
+F=i; 
+C=j; 
+end 
+end 
+end 
