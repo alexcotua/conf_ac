@@ -1,20 +1,23 @@
 %sumar la j-esima fila de una matriz
-Fuction suma=sumafila(a,k)
-suma=0;
-[m,n]=size(a);
-for k=1:n
-suma=suma+a(j,k);
+
+function suma=sumafila(a,k)
+% a es la matriz y k la fila que voy a sumar
+    [m,n]=size(a);
+    suma =0;
+        for j=1:n
+            suma = suma + a(k,j);
+        end
 end
 
 %sumar toda la matriz
 function suma=sumatodo(a)
 s=0
 [m,n]=size(a)
-for i=1:m
-for k=1:n
-s=s+a(i,k);
-end
-end
+ for i=1:m
+  for k=1:n
+   s=s+a(i,k);
+  end
+ end
 end
 
 %intercambio de filas de una matriz
