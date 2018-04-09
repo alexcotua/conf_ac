@@ -1,0 +1,191 @@
+Clase 26 de  febrero
+
+Metodo de newton
+x1=x0-(f(xo)/f'(x0))
+xo=x1
+end
+
+
+
+---
+function newton4(x0,f,df,N)
+for j=1:N
+    x1=x0-f(x0)/df(x0);
+    x0=x1;
+end
+x0
+end
+
+>> f=@(x)x.^2-5*x+6
+>> df=@(x)2*x-5
+>> newton4(-3,f,df,10)
+
+
+
+---
+
+function z=newton5(x0,f,df,N)
+z=[];
+
+for j=1:N
+    x1=x0-f(x0)/df(x0);
+    z=[z;x1]
+    x0=x1;
+end
+x0
+end
+
+
+-..-.-.-
+
+function z=newton5(x0,f,df,N)
+z=[x0];
+
+for j=1:N
+    x1=x0-f(x0)/df(x0);
+    z=[z;x1];
+    x0=x1;
+end
+
+end
+
+
+
+
+...
+>> newton5(-3,f,df,10)
+
+ans =
+
+  -3.000000000000000
+  -0.272727272727273
+   1.068554396423249
+   1.696952887956549
+   1.942819324831277
+   1.997065916175430
+   1.999991441375553
+   1.999999999926750
+   1.999999999999999
+   2.000000000000000
+   2.000000000000000
+
+
+
+
+
+===========================
+F(x)=x^3-2x^2-5    [1,4]
+
+
+>> g=@(x)x.^3+2x.^2-5
+>> gf=@(x)3*.x^2-4*x
+
+function z=newton6(x0,g,gf,N)
+z=[x0];
+
+for j=1:N
+    x1=x0-f(x0)/df(x0);
+    z=[z;x1];
+    x0=x1;
+end
+
+end
+
+
+
+ahora perder4emos el tiempo un poco mas usando el metodo de bizecion.
+y la terminamos comprarando en el qcual uno se da cuenta que el de newton converge mas rapido que esta.
+
+
+
+--- INTERACION DE PUNTO FIJO
+
+Despeja la x de manera salvaje y resuelve el problema.
+
+
+x=g(x)
+for j=1:N
+x1=g(x0)
+x0=x1
+end
+
+x^3+4*x^2-10=0
+4^2=10-x^3
+
+x=1/2(sqrt(10-x^3))
+x^3=10-4x^2
+x=(10-4x^2)^(1/3)
+x=sqrt((10/x)-dx)
+
+
+-.-.-..
+function z=puntof(x0,g,N)
+z=[x0]
+for j=1:N
+    x1=g(x0)
+    z=[z;x1]
+    x0=x1;
+end
+end
+
+
+ººººº
+
+encontrar el sitio donde la grafica corta el eje X
+. entonces de alli viene encontrar los ceros de la funcion. siempre y cuando pase los terminos a la derecha. 
+- para que haya un raiz entra a y b , la funcion debe de ser continua.
+si tiene signos opuestos  su producto es 
+
+Creo un nuevo intervalo.
+y creo nuevas asignaciones para a y b y x  ; x=(a+b)/2 alternando mitades de derecha e izquierda ( como cambios)
+
+Si f(x)*f(a) es negativo significa que la balita esta entre a y b entonces el nuevo interbalo
+ es a <-- x *sino* es por que esta al otro lado b<- x
+
+
+
+function bolita(a,b,f,N)
+for j=1:N
+    x=(a+b)/2
+    if (f(x)*f(b)<0)
+        a=x;
+    else
+        b=x;
+    end
+end
+end
+
+
+punto medio del interbalo de a y b. cuando encuentro el punto medio 
+
+ f=@(x) x.^2-5*x+6
+
+ f([1,2.4,3])
+
+ans =
+
+    2.0000   -0.2400         0
+
+finalizando queda:
+ bolita(0,2.5,f,20) --> queda que converge en 2.
++
+segunda forma mas organizada 
+
+function z=ebola(a,b,f,N)
+z=[];
+for j=1:N
+    x=(a+b)/2;
+    z=[z;x];
+    if (f(x)*f(b)<0)
+        a=x;
+    else
+        b=x;
+    end
+end
+end
+
+
+metoido de biseccion
+g=@(x) x.^3-3*x+10
+
+ ebola(-4,0,g,100)
