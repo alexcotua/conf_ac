@@ -113,3 +113,45 @@ C=j;
 end 
 end 
 end 
+
+
+function encontrar(x,a)
+%x es vector
+%a es un escalar
+           m = length(x);
+         j=1;
+         while(j <=m)
+             if(x(j)==a)
+                 disp('EUREKA ')
+                 j = m+20;
+             else
+                 j=j+1;
+             end
+         end  %fin de while
+         if (j==m+1)
+             disp('NO ESTA')
+         end
+end
+         
+
+
+
+function encontrar2(x,a)
+%x es vector
+%a es un escalar
+           m = length(x);
+         cont=0;
+         for j=1:m
+               if(x(j)==a)
+                 cont=cont+1;
+                end
+         end 
+         if (cont==0)
+             disp('NO ESTA')
+         else
+             disp('ESTA ')
+             cont
+             disp('veces')
+         end
+         
+end
